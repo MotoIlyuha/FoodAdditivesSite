@@ -1,0 +1,26 @@
+#my-nav {
+  padding: 0;
+}
+
+#my-nav2 {
+  display: flex;
+  padding-right: 0;
+  width: 100%;
+}
+
+#close-add {
+  white-space: pre;
+  padding: 16px;
+  border-radius: 0;
+  color: white;
+  background: transparent;
+}
+
+#close-add:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.content {
+  margin: 24px;
+}

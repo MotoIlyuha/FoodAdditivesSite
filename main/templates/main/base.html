@@ -1,0 +1,48 @@
+<!-- <!DOCTYPE html> -->
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+
+<body>
+<!--  Навигационная панель  -->
+<nav class="navbar navbar-expand navbar-dark bg-dark" id="my-nav">
+    <nav class="navbar navbar-expand navbar-dark bg-dark" id="my-nav2">
+        <a class="navbar-brand" href="{% url 'home' %}">E-Dobavka.ru - поиск пищевых добавок</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02"
+                aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample02">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                </li>
+            </ul>
+            <ul class="navbar-nav" id="my-ul">
+                <a class="nav-link" href="{% url 'home' %}" style="white-space: pre;">Нашли ошибку?<span
+                        class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}" style="white-space: pre;">О проекте</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <button type="button" class="btn" id="close-add">Отключить рекламу</button>
+        </li>
+    </ul>
+</nav>
+
+<!--  Контент  -->
+{% block content %} {% endblock %}
+
+</body>
+
+</html>

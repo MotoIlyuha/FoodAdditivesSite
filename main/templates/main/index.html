@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+<!--  Заголовок  -->
+{% block title %}
+Поиск добавок
+{% endblock %}
+
+<!--  Контент  -->
+{% block content %}
+<div class="content">
+    <label for="main-input">Введите код или название пищевой добавки</label>
+    <input id="main-input" class="form-control" type="text" placeholder="Например, сорбат натрия" readonly>
+    <small id="helpBlock" class="form-text text-muted">Вы можете не вводить "Е" перед кодом добавки</small>
+</div>
+{% endblock %}
