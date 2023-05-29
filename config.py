@@ -1,4 +1,4 @@
-user = "root"
-password = "3211"
-host = "localhost:3306"
-db = "food_additives"
+user = "physfree_food"
+password = "!Data3211Base!"
+host = "physfree.beget.tech:3306"
+db = "physfree_food"
