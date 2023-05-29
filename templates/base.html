@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>{% block title %}{% endblock %}</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script
+            src="https://code.jquery.com/jquery-3.7.0.slim.min.js"
+            integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE="
+            crossorigin="anonymous">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+<!-- Заголовок сайта -->
+<header class="header">
+    <div class="branding">
+        <a href="/" rel="home" class="branding__logo">
+            <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="Главная">
+        </a>
+        <div class="branding__info">
+            <h1 class="branding__name"><a href="/" title="Главная" rel="home">Добавкам.нет</a></h1>
+            <h2 class="branding__slogan">Все о Е-добавках и составе продуктов</h2>
+        </div>
+    </div>
+</header>
+
+<!-- Навигационная панель -->
+<nav class="menu-container">
+    <ul class="menu">
+        <li class="menu-item">
+            <a href="/">Главная</a>
+        </li>
+        <li class="menu-item">
+            <a href="/additives">Добавки</a>
+        </li>
+        <li class="menu-item">
+            <a href="/info">Информация</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Основной контент страницы -->
+<main class="page__main">
+    {% block body %}{% endblock %}
+</main>
+
+<!-- Подвал сайта с контактами и прочей информации -->
+<footer>
+    <div class="page__copyright">© Моторин Илья, 2023</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Пищевые добавки
+{% endblock %}
+
+{% block body %}
+
+    <aside class="page__sidebar">
+        <ul class="menu">
+            {% for category in categories %}
+                <li class="menu-item">
+                    <a href="/additives/{{ category }}">{{ category }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </aside>
+
+    <div class="page__content">
+        <label for="inputText"></label><input type="text" id="inputText"/>
+        <ul id="output">
+{#            <ul>#}
+{#                {% for add in result %}#}
+{#                    <li>#}
+{#                        <a href="/additives/{{ add.code }}">{{ add.code }}, {{ add.name }}</a>#}
+{#                    </li>#}
+{#                {% endfor %}#}
+{#            </ul>#}
+        </ul>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#inputText').on('input', function () {
+                var text = $(this).val();
+                $.ajax({
+                    type: 'POST',
+                    url: '/additives/process',
+                    data: {text: text},
+                    success: function (response) {
+                        updateResult(response);
+                    },
+                    error: function (xhr, status, error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
+
+        function updateResult(result) {
+            var resultContainer = $("#output");
+            resultContainer.empty();
+            $.each(result, function (index, item) {
+                resultContainer.append(
+                    "<li>" + item.code + ' ' + item.name + ' ' + item + "</li>"
+                );
+            });
+        }
+    </script>
+
+
+{% endblock %}

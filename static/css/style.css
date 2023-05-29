@@ -1,0 +1,178 @@
+body {
+    background: #fbfbfb;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+header {
+    margin: 0 auto;
+    padding: 0 5%;
+    height: inherit;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    box-shadow: none;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.branding {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: inherit;
+    flex: 1;
+}
+
+.branding__info {
+    margin-left: 15px;
+    display: block;
+}
+
+.branding__logo img {
+    height: 100%;
+    width: auto;
+}
+
+.branding__name {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.branding__slogan {
+    margin: 0;
+    font-size: 1em;
+    font-weight: normal;
+}
+
+h1 
+{
+    color: green;
+}
+
+.menu
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 0 10px;
+    border-bottom: 1px solid #e5e5e5;
+    list-style-type: none;
+}
+
+.menu-container {
+    transition: none;
+    margin: 4px 24px 50px;
+    padding: 0 5%;
+    position: static;
+    display: block;
+    flex: 1;
+    justify-content: flex-end;
+    background: none;
+}
+
+.menu-item a {
+    font-size: 1.125em;
+    display: block;
+    text-decoration: none;
+    color: #000;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s all ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.page__main {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.page__content {
+    flex: 1;
+    min-width: 0;
+}
+
+.flex-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.branding__logo img {
+    height: 100%;
+    width: auto;
+}
+
+.branding__name a {
+    color: #209e20;
+    text-decoration: none;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 0 10px;
+    margin: 0 0 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.menu a:hover{
+    font-weight: bold;
+    border-bottom: 3px solid #209e20;
+}
+
+.field-image {
+    padding-right: 20px;
+}
+
+.field-text {
+    flex: 1;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+}
+
+footer {
+    display: block;
+    margin-top: 20px;
+    background: #e5e5e5;
+    border-top: 1px solid #209e20;
+}
+
+.page__main {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+}
+
+.page__copyright {
+    padding: 10px 0;
+    background: #f8f8f8;
+    text-align: center;
+}
+
+.page__sidebar {
+    width: 25%;
+    box-sizing: border-box;
+    font-size: 0.875em;
+    color: #000;
+    text-decoration: none;
+    line-height: 1.2;
+    padding: 10px 40px 10px 0;
+    display: block;
+    margin-right: 30px;
+    transition: 0.3s all ease;
+}
+
