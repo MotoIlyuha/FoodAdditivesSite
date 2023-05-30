@@ -29,7 +29,7 @@ def process():
         add = db.session.query(Data).filter(Data.id == add_id).first()
         adds.append({'code': add.code, 'name': add.name, 'danger': add.danger_id, 'categories': add.categories,
                      'origins': add.origins})
-    print(adds)
+    print(text, adds)
     return jsonify(adds)
 
 
