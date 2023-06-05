@@ -23,14 +23,33 @@ def additives_category(category):
 @app.route('/additives/process', methods=['POST'])
 def process():
     text = request.form['text']
-    add_ids = set([id_[0] for id_ in db.session.query(Synonym.data_id).filter(Synonym.name.like(f"%{text}%")).all()])
-    adds = []
-    for add_id in add_ids:
-        add = db.session.query(Data).filter(Data.id == add_id).first()
-        adds.append({'code': add.code, 'name': add.name, 'danger': add.danger_id, 'categories': add.categories,
-                     'origins': add.origins})
-    print(adds)
-    return jsonify(adds)
+    matching_synonyms = Synonym.query.filter(Synonym.name.like(f'%{text}%')).all()
+
+    # Собрать идентификаторы связанных синонимами объектов Data
+    data_ids = [synonym.data_id for synonym in matching_synonyms]
+
+    # Получить данные Data и связанные с ними объекты Danger, Category и Origin
+    data_query = Data.query \
+        .join(Danger) \
+        .join(Category, Data.categories) \
+        .join(Origin, Data.origins) \
+        .filter(Data.id.in_(data_ids))\
+        .order_by(Data.code)
+
+    # Извлечь необходимые поля из результата запроса
+    result = data_query.with_entities(Data.code, Data.name, Danger.name, Category.name, Origin.name).all()
+
+    # Преобразовать результат в список словарей для удобства использования
+    data = []
+    for row in result:
+        data.append({
+            'code': row[0],
+            'name': row[1],
+            'danger': row[2],
+            'categories': row[3:],
+            'origins': row[3:]
+        })
+    return jsonify(data)
 
 
 @app.route('/info')

@@ -6,16 +6,6 @@
 
 {% block body %}
 
-    <aside class="page__sidebar">
-        <ul class="menu">
-            {% for category in categories %}
-                <li class="menu-item">
-                    <a href="/additives/{{ category }}">{{ category }}</a>
-                </li>
-            {% endfor %}
-        </ul>
-    </aside>
-
     <div class="page__content">
         <label for="inputText"></label><input type="text" id="inputText"/>
         <ul id="output">
@@ -28,6 +18,16 @@
 {#            </ul>#}
         </ul>
     </div>
+
+    <aside class="page__sidebar">
+        <ul class="menu">
+            {% for category in categories %}
+                <li class="menu-item">
+                    <a href="/additives/{{ category }}">{{ category }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </aside>
 
     <script>
         $(document).ready(function () {
@@ -52,7 +52,7 @@
             resultContainer.empty();
             $.each(result, function (index, item) {
                 resultContainer.append(
-                    "<li>" + item.code + ' ' + item.name + ' ' + item + "</li>"
+                    "<li>" + item.code + ' ' + item.name + "</li>"
                 );
             });
         }
