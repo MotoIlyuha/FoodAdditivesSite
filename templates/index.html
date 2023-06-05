@@ -6,37 +6,461 @@
 
 {% block body %}
     <div class="page__content">
-        <p>«Добавкам.нет» - информативный ресурс о пищевых добавках и продуктах, их содержащих. Мы рассказываем о
-            вредных и безопасных добавках, помогаем с первого взгляда находить в составе продуктов опасные
-            компоненты.</p>
+        <div class="inner">
+            <h1 class="inner__title">E-Search</h1>
+            <p class="inner__descr">
+                «E-Search» - информативный ресурс о пищевых добавках и продуктах, их содержащих.<br><span>Мы рассказываем о
+                вредных и безопасных добавках, помогаем с первого взгляда находить в составе продуктов опасные
+                компоненты.
+                Будьте уверены в составе продуктов, которые вы выбираете<br>для себя и своих близких! И не забудьте
+                добавить сайт в закладки!</span>
+            </p>
 
-        <p>Будьте уверены в составе продуктов, которые вы выбираете для себя и своих близких! И не забудьте добавить
-            сайт в закладки!</p>
+        </div>
+        <div class="nutritional">
+            <div class="nutritional__title section-title">Пищевые добавки</div>
+            <div class="nutritional__block">
+                <div class="nutritional__block-left">
 
-        <h1>Пищевые добавки</h1>
-
-        <div class="flex-wrapper">
-            <div class="field-image">
-                <img src={{ url_for('static', filename='images/addidives_0.png') }}>
+                </div>
+                <div class="nutritional__descr">
+                    Пользуйтесь информативной таблицей <a class="green-href" href="#">пищевых добавок</a>, которая
+                    поможет быстро узнать:
+                    <ul>
+                        <li>Происхождение добавки - иконка каждой добавки маркируется значком происхождения.</li>
+                        <li>Опасность добавки – каждая иконка снабжена шкалой опасности.</li>
+                    </ul>
+                    Для вашего максимального комфорта мы разместили удобный поиск и фильтр на левой стороне страницы. С
+                    их помощью вы легко найдете нужные добавки.
+                </div>
             </div>
-            <div class="field-text">
-                <p>Пользуйтесь информативной <a href="/additives">таблицей пищевых добавок</a>, которая поможет быстро
-                    узнать:</p>
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="top">
+                                <div class="number">
+                                    <p>E-150</p><span></span>
+                                </div>
+                                <div class="title">
+                                    <p class="overflow-ellipsis">Кармины</p>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <div class="categories">
+                                    <p>Красители</p>
+                                    <p>Эмульгаторы</p>
+                                </div>
+                                <div class="origin">
+                                    <div class="img">
+                                        <img src="../static/images/artificial3.png" alt="">
+                                        <img src="../static/images/biological3.png" alt="">
+                                        <img src="../static/images/vegetable3.png" alt="">
+                                    </div>
+                                    <div class="level">
+                                        <img src="../static/images/danger1.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="top">
+                                <div class="number">
+                                    <p>E-150</p><span></span>
+                                </div>
+                                <div class="title">
+                                    <p class="overflow-ellipsis">Кармины</p>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <div class="categories">
+                                    <p>Красители</p>
+                                    <p>Эмульгаторы</p>
+                                </div>
+                                <div class="origin">
+                                    <div class="img">
+                                        <img src="../static/images/artificial3.png" alt="">
+                                        <img src="../static/images/biological3.png" alt="">
+                                        <img src="../static/images/vegetable3.png" alt="">
+                                    </div>
+                                    <div class="level">
+                                        <img src="../static/images/danger1.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="top">
+                                <div class="number">
+                                    <p>E-150</p><span></span>
+                                </div>
+                                <div class="title">
+                                    <p class="overflow-ellipsis">Кармины</p>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <div class="categories">
+                                    <p>Красители</p>
+                                    <p>Эмульгаторы</p>
+                                </div>
+                                <div class="origin">
+                                    <div class="img">
+                                        <img src="../static/images/artificial3.png" alt="">
+                                        <img src="../static/images/biological3.png" alt="">
+                                        <img src="../static/images/vegetable3.png" alt="">
+                                    </div>
+                                    <div class="level">
+                                        <img src="../static/images/danger1.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="top">
+                                <div class="number">
+                                    <p>E-150</p><span></span>
+                                </div>
+                                <div class="title">
+                                    <p class="overflow-ellipsis">Кармины</p>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <div class="categories">
+                                    <p>Красители</p>
+                                    <p>Эмульгаторы</p>
+                                </div>
+                                <div class="origin">
+                                    <div class="img">
+                                        <img src="../static/images/artificial3.png" alt="">
+                                        <img src="../static/images/biological3.png" alt="">
+                                        <img src="../static/images/vegetable3.png" alt="">
+                                    </div>
+                                    <div class="level">
+                                        <img src="../static/images/danger1.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="top">
+                                <div class="number">
+                                    <p>E-150</p><span></span>
+                                </div>
+                                <div class="title">
+                                    <p class="overflow-ellipsis">Кармины</p>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <div class="categories">
+                                    <p>Красители</p>
+                                    <p>Эмульгаторы</p>
+                                </div>
+                                <div class="origin">
+                                    <div class="img">
+                                        <img src="../static/images/artificial3.png" alt="">
+                                        <img src="../static/images/biological3.png" alt="">
+                                        <img src="../static/images/vegetable3.png" alt="">
+                                    </div>
+                                    <div class="level">
+                                        <img src="../static/images/danger1.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="top">
+                                <div class="number">
+                                    <p>E-150</p><span></span>
+                                </div>
+                                <div class="title">
+                                    <p class="overflow-ellipsis">Кармины</p>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <div class="categories">
+                                    <p>Красители</p>
+                                    <p>Эмульгаторы</p>
+                                </div>
+                                <div class="origin">
+                                    <div class="img">
+                                        <img src="../static/images/artificial3.png" alt="">
+                                        <img src="../static/images/biological3.png" alt="">
+                                        <img src="../static/images/vegetable3.png" alt="">
+                                    </div>
+                                    <div class="level">
+                                        <img src="../static/images/danger1.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="top">
+                                <div class="number">
+                                    <p>E-150</p><span></span>
+                                </div>
+                                <div class="title">
+                                    <p class="overflow-ellipsis">Кармины</p>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <div class="categories">
+                                    <p>Красители</p>
+                                    <p>Эмульгаторы</p>
+                                </div>
+                                <div class="origin">
+                                    <div class="img">
+                                        <img src="../static/images/artificial3.png" alt="">
+                                        <img src="../static/images/biological3.png" alt="">
+                                        <img src="../static/images/vegetable3.png" alt="">
+                                    </div>
+                                    <div class="level">
+                                        <img src="../static/images/danger1.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="top">
+                                <div class="number">
+                                    <p>E-150</p><span></span>
+                                </div>
+                                <div class="title">
+                                    <p class="overflow-ellipsis">Кармины</p>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <div class="categories">
+                                    <p>Красители</p>
+                                    <p>Эмульгаторы</p>
+                                </div>
+                                <div class="origin">
+                                    <div class="img">
+                                        <img src="../static/images/artificial3.png" alt="">
+                                        <img src="../static/images/biological3.png" alt="">
+                                        <img src="../static/images/vegetable3.png" alt="">
+                                    </div>
+                                    <div class="level">
+                                        <img src="../static/images/danger1.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="top">
+                                <div class="number">
+                                    <p>E-150</p><span></span>
+                                </div>
+                                <div class="title">
+                                    <p class="overflow-ellipsis">Кармины</p>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <div class="categories">
+                                    <p>Красители</p>
+                                    <p>Эмульгаторы</p>
+                                </div>
+                                <div class="origin">
+                                    <div class="img">
+                                        <img src="../static/images/artificial3.png" alt="">
+                                        <img src="../static/images/biological3.png" alt="">
+                                        <img src="../static/images/vegetable3.png" alt="">
+                                    </div>
+                                    <div class="level">
+                                        <img src="../static/images/danger1.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="top">
+                                <div class="number">
+                                    <p>E-150</p><span></span>
+                                </div>
+                                <div class="title">
+                                    <p class="overflow-ellipsis">Кармины</p>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <div class="categories">
+                                    <p>Красители</p>
+                                    <p>Эмульгаторы</p>
+                                </div>
+                                <div class="origin">
+                                    <div class="img">
+                                        <img src="../static/images/artificial3.png" alt="">
+                                        <img src="../static/images/biological3.png" alt="">
+                                        <img src="../static/images/vegetable3.png" alt="">
+                                    </div>
+                                    <div class="level">
+                                        <img src="../static/images/danger1.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="top">
+                                <div class="number">
+                                    <p>E-150</p><span></span>
+                                </div>
+                                <div class="title">
+                                    <p class="overflow-ellipsis">Кармины</p>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <div class="categories">
+                                    <p>Красители</p>
+                                    <p>Эмульгаторы</p>
+                                </div>
+                                <div class="origin">
+                                    <div class="img">
+                                        <img src="../static/images/artificial3.png" alt="">
+                                        <img src="../static/images/biological3.png" alt="">
+                                        <img src="../static/images/vegetable3.png" alt="">
+                                    </div>
+                                    <div class="level">
+                                        <img src="../static/images/danger1.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="top">
+                                <div class="number">
+                                    <p>E-150</p><span></span>
+                                </div>
+                                <div class="title">
+                                    <p class="overflow-ellipsis">Кармины</p>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <div class="categories">
+                                    <p>Красители</p>
+                                    <p>Эмульгаторы</p>
+                                </div>
+                                <div class="origin">
+                                    <div class="img">
+                                        <img src="../static/images/artificial3.png" alt="">
+                                        <img src="../static/images/biological3.png" alt="">
+                                        <img src="../static/images/vegetable3.png" alt="">
+                                    </div>
+                                    <div class="level">
+                                        <img src="../static/images/danger1.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="top">
+                                <div class="number">
+                                    <p>E-150</p><span></span>
+                                </div>
+                                <div class="title">
+                                    <p class="overflow-ellipsis">Кармины</p>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <div class="categories">
+                                    <p>Красители</p>
+                                    <p>Эмульгаторы</p>
+                                </div>
+                                <div class="origin">
+                                    <div class="img">
+                                        <img src="../static/images/artificial3.png" alt="">
+                                        <img src="../static/images/biological3.png" alt="">
+                                        <img src="../static/images/vegetable3.png" alt="">
+                                    </div>
+                                    <div class="level">
+                                        <img src="../static/images/danger1.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="top">
+                                <div class="number">
+                                    <p>E-150</p><span></span>
+                                </div>
+                                <div class="title">
+                                    <p class="overflow-ellipsis">Кармины</p>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <div class="categories">
+                                    <p>Красители</p>
+                                    <p>Эмульгаторы</p>
+                                </div>
+                                <div class="origin">
+                                    <div class="img">
+                                        <img src="../static/images/artificial3.png" alt="">
+                                        <img src="../static/images/biological3.png" alt="">
+                                        <img src="../static/images/vegetable3.png" alt="">
+                                    </div>
+                                    <div class="level">
+                                        <img src="../static/images/danger1.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-navigation">
+                    <div class="swiper-button-prev">
+                        <img src="../static/images/arrow_left.svg" alt="">
+                    </div>
+                    <div class="swiper-button-next">
+                        <img src="../static/images/arrow_right.svg" alt="">
+                    </div>
+                </div>
 
-                <ul>
-                    <li>Происхождение добавки - иконка каждой добавки маркируется значком происхождения.</li>
-                    <li>Опасность добавки – каждая иконка снабжена шкалой опасности.</li>
-                </ul>
-
-                <p>Подробнее о нашей системе уровней опасности и маркировке добавок читайте в <a href="">статье</a>.</p>
-
-                <p>Для вашего удобства вверху таблицы добавок и в начале страницы конкретной добавки есть специальные
-                    блоки-пояснения, нажав на которые, можно перейти к списку всех добавок в данной группе.</p>
-
-                <p>В подменю раздела представлены перечни добавок по категориям: <a
-                        href="files/krasiteli.html">красители</a>, <a href="files/konservanty.html">консерванты</a> и
-                    т.д.</p>
+            </div>
+            <div class="nutritional__btn">
+                <a href="#" class="btn btn-reset">Перейти к таблице добавок</a>
             </div>
         </div>
+        <div class="information">
+            <div class="information__tilte section-title">Информация</div>
+            <div class="information__block">
+                <div class="information__block-left">
+                    <img src="../static/images/info-bg.png" alt="">
+                </div>
+                <div class="information__block-right">
+                    <p>На странице "Информация" вы можете оставить сообщение, чтобы помочь нам совершенствоваться. Мы
+                        ценим ваше время и интерес к пищевым добавкам, и мы надеемся продолжать быть вашим надежным
+                        источником информации в этой области.</p>
+                </div>
+            </div>
+            <div class="information__btn">
+                <a href="#" class="btn btn-reset">Перейти к информации</a>
+            </div>
+        </div>
+
     </div>
 {% endblock %}
