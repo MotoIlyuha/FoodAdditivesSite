@@ -5,5 +5,74 @@
 {% endblock %}
 
 {% block body %}
+    <div class="social">
+
+        <h1 class="head_social">Информация</h1>
+        <div class="content_social">
+            <div>
+                <h2 class="content__title">
+                    Мы рады получить ваш отзыв о нашем сайте и разделе, посвященном пищевым добавкам.
+                </h2>
+
+                <h2 class="content__title">
+                    Мы стремимся предоставить вам наиболее полезную и достоверную информацию.
+                </h2>
+                <h2 class="content__title">
+                    Ваше мнение очень важно для нас!!!
+
+                </h2>
+                <p class="social_content">
+                    На нашем сайте мы предлагаем информацию о пищевых добавках, их роли, классификации и безопасности. Мы
+                    понимаем, что пищевые добавки являются важной и актуальной темой, которая вызывает интерес и волнует
+                    многих потребителей. Мы стараемся предоставить объективную и понятную информацию.
+                </p>
+                <p class="social_content">
+                    Мы признаем, что мнения о пищевых добавках могут различаться, и мы приветствуем диалог и обратную связь
+                    от наших посетителей. Если у вас есть какие-либо комментарии, предложения или вопросы относительно нашей
+                    информации о пищевых добавках, пожалуйста, свяжитесь с нами. Мы готовы обсудить любые вопросы, которые у
+                    вас могут возникнуть, и внести соответствующие изменения или обновления, чтобы улучшить качество нашего
+                    содержания.
+                </p>
+                <p class="social_content">
+                    Ваша обратная связь помогает нам совершенствоваться и улучшать наш сайт. Мы ценим ваше время и интерес к
+                    пищевым добавкам, и мы надеемся продолжать быть вашим надежным источником информации в этой области.
+                </p>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="forma">
+        <div class="form-at">
+            <div class="validate-input-at w-50" data-validate="Обязательное поле">
+                <input class="input-at" type="text" name="name-at" placeholder="Ваше имя"/>
+                <span class="focus-input-at"></span>
+            </div>
+            <div class="validate-input-at w-50" data-validate="Обязательное поле">
+                <input class="input-at" type="text" name="email-at" placeholder="Ваш телефон или email"/>
+                <span class="focus-input-at"></span>
+            </div>
+            <div class="validate-input-at" data-validate="Обязательное поле">
+                <textarea class="input-at" name="message-at" placeholder="Ваше сообщение"></textarea>
+                <span class="focus-input-at"></span>
+            </div>
+            <input  class="input-at" id="checkbox-at" type="checkbox" name="checkbox-at"
+                   onchange="document.getElementById('submit-at').disabled = !this.checked;"/>
+            <label for="checkbox-at">
+                Настоящим подтверждаю, что я ознакомлен и согласен с <a href="#">пользовательским соглашением</a>
+            </label>
+            <input type="hidden" name="subject-at" value="Тема формы">
+            <button id="submit-at" class="form-at-btn" disabled="disabled">Отправить</button>
+        </div>
+        <div class="result-at"></div>
+    </div>
+    <h1 class="social_footer">
+        Благодарим вас за посещение нашего сайта и вашу обратную связь!
+    </h1>
+
+
 
 {% endblock %}
