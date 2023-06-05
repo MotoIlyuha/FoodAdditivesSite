@@ -1,6 +1,31 @@
-<div>
-    <a>
-        <div class="additive-id">{% block id %}{% endblock %}</div>
-        <div class="additive-name">{% block name %}{% endblock %}</div>
-    </a>
-</div>
+{% macro card(item) -%}
+    <div class="swiper-slide">
+        <div class="card">
+            <div class="top">
+                <div class="number">
+                    <p>{{ item.code }}</p><span></span>
+                </div>
+                <div class="title">
+                    <p class="overflow-ellipsis">{{ item.name }}</p>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="categories">
+                    {% for category in item.categories %}
+                        <p>{{ category }}</p>
+                    {% endfor %}
+                </div>
+                <div class="origin">
+                    <div class="img">
+                        {% for origin in item.origins %}
+                            <img src="../static/images/{{ origin }}.png" alt="">
+                        {% endfor %}
+                    </div>
+                    <div class="level">
+                        <img src="../static/images/danger1.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{%- endmacro %}
