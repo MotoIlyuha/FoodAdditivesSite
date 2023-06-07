@@ -56,3 +56,4 @@ class Synonym(db.Model):
 
 with app.app_context():
     db.create_all()
+    additives_categories = [category[0] for category in db.session.query(Category.name).all()]

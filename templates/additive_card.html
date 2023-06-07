@@ -1,31 +1,29 @@
-{% macro card(item) -%}
-    <div class="swiper-slide">
-        <div class="card">
-            <div class="top">
-                <div class="number">
-                    <p>{{ item.code }}</p><span></span>
-                </div>
-                <div class="title">
-                    <p class="overflow-ellipsis">{{ item.name }}</p>
-                </div>
+{% macro card(item, link) -%}
+    <a class="card" href="https://dobavkam.net/additives/{{ link }}">
+        <div class="top">
+            <div class="number">
+                <p>{{ item.code }}</p><span></span>
             </div>
-            <div class="bottom">
-                <div class="categories">
-                    {% for category in item.categories %}
-                        <p>{{ category }}</p>
+            <div class="title">
+                <p class="overflow-ellipsis">{{ item.name }}</p>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="categories">
+                {% for category in item.categories %}
+                    <p>{{ category }}</p>
+                {% endfor %}
+            </div>
+            <div class="origin">
+                <div class="img">
+                    {% for origin in item.origins %}
+                        <img src="../static/images/{{ origin }}.png" alt="">
                     {% endfor %}
                 </div>
-                <div class="origin">
-                    <div class="img">
-                        {% for origin in item.origins %}
-                            <img src="../static/images/{{ origin }}.png" alt="">
-                        {% endfor %}
-                    </div>
-                    <div class="level">
-                        <img src="../static/images/danger1.png" alt="">
-                    </div>
+                <div class="level">
+                    <img src="../static/images/danger1.png" alt="">
                 </div>
             </div>
         </div>
-    </div>
+    </a>
 {%- endmacro %}

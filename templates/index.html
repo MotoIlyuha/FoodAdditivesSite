@@ -21,10 +21,10 @@
             <div class="nutritional__title section-title">Пищевые добавки</div>
             <div class="nutritional__block">
                 <div class="nutritional__block-left">
-
+                    <img src="../static/images/demo.png" alt="demo">
                 </div>
                 <div class="nutritional__descr">
-                    Пользуйтесь информативной таблицей <a class="green-href" href="#">пищевых добавок</a>, которая
+                    Пользуйтесь информативной таблицей <a class="green-href" href="/">пищевых добавок</a>, которая
                     поможет быстро узнать:
                     <ul>
                         <li>Происхождение добавки - иконка каждой добавки маркируется значком происхождения.</li>
@@ -39,8 +39,10 @@
                 <div class="swiper-wrapper">
                     <!-- Slides -->
                     {% for item in additives %}
+                    <div class="swiper-slide">
                         {% from 'additive_card.html' import card as card %}
-                        {{ card(item) }}
+                        {{ card(item, item.code | lower) }}
+                    </div>
                     {% endfor %}
                 </div>
                 <div class="swiper-navigation">
@@ -54,11 +56,11 @@
 
             </div>
             <div class="nutritional__btn">
-                <a href="#" class="btn btn-reset">Перейти к таблице добавок</a>
+                <a href="/additives" class="btn btn-reset">Перейти к таблице добавок</a>
             </div>
         </div>
         <div class="information">
-            <div class="information__tilte section-title">Информация</div>
+            <div class="information__title section-title">Информация</div>
             <div class="information__block">
                 <div class="information__block-left">
                     <img src="../static/images/info-bg.png" alt="">
@@ -70,7 +72,7 @@
                 </div>
             </div>
             <div class="information__btn">
-                <a href="#" class="btn btn-reset">Перейти к информации</a>
+                <a href="/info" class="btn btn-reset">Перейти к информации</a>
             </div>
         </div>
 

@@ -2,20 +2,30 @@ from flask import render_template, request, redirect, jsonify
 from create_db import *
 
 
-def get_additives(synonym, limit=50):
+def get_additives(synonym, category=None, limit=50):
     matching_synonyms = Synonym.query.filter(Synonym.name.like(f'%{synonym}%')).all()
 
     # Собрать идентификаторы связанных синонимами объектов Data
     data_ids = [synonym.data_id for synonym in matching_synonyms]
 
     # Получить данные Data и связанные с ними объекты Danger, Category и Origin
-    data_query = Data.query \
-        .join(Danger) \
-        .join(Category, Data.categories) \
-        .join(Origin, Data.origins) \
-        .filter(Data.id.in_(data_ids)) \
-        .order_by(Data.code) \
-        .limit(limit)
+    if category is None:
+        data_query = Data.query \
+            .join(Danger) \
+            .join(Category, Data.categories) \
+            .join(Origin, Data.origins) \
+            .filter(Data.id.in_(data_ids)) \
+            .order_by(Data.code) \
+            .limit(limit)
+    else:
+        data_query = Data.query \
+            .join(Danger) \
+            .join(Category, Data.categories) \
+            .join(Origin, Data.origins) \
+            .filter(Category.name == category) \
+            .filter(Data.id.in_(data_ids)) \
+            .order_by(Data.code) \
+            .limit(limit)
 
     # Извлечь необходимые поля из результата запроса
     result = data_query.with_entities(Data.code, Data.name, Danger.name, Category.name, Origin.name).all()
@@ -35,27 +45,34 @@ def get_additives(synonym, limit=50):
 
 @app.route('/')
 def index():
-    data = get_additives("")
+    data = get_additives("", limit=10)
     return render_template('index.html', additives=data)
 
 
 @app.route('/additives')
 def additives():
-    additives_categories = [category[0] for category in db.session.query(Category.name).all()]
-    return render_template('additives.html', categories=additives_categories)
+    data = get_additives('')
+    return render_template('additives.html', item=data, categories=additives_categories)
 
 
 @app.route('/additives/<category>')
 def additives_category(category):
-    print(category)
-    additives_categories = [category[0] for category in db.session.query(Category.name).all()]
-    return render_template('additives.html', categories=additives_categories)
+    data = get_additives("", category)
+    return render_template('additives.html', item=data, categories=additives_categories, category=category)
+
+
+@app.route('/additives/<category>/process')
+def additives_category_process(category):
+    text = request.form['text']
+    data = get_additives(text, category)
+    return jsonify(data)
 
 
 @app.route('/additives/process', methods=['POST'])
 def process():
     text = request.form['text']
     data = get_additives(text)
+    print(data)
     return jsonify(data)
 
 
